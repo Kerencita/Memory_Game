@@ -1,0 +1,28 @@
+#game div {
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+  margin-left: 30px;
+  margin-right: 10px;
+
+}
+
+.card{
+  float: left;
+  border: 1px solid black;
+  width: 15%;
+  height: 200px;
+  margin: 10px;
+}
+
+h1{
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+}
+
+body{
+  background-color: antiquewhite;
+}
