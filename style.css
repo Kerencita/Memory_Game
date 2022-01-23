@@ -1,17 +1,20 @@
-#game div {
-  display: flex;
-  justify-content: center;
-  background-color: gray;
+#game{
+  margin: auto;
   margin-left: 30px;
-  margin-right: 10px;
+  margin-right: 30px;
+  align-items: center;
+  display: flex;
+}
 
+#game div{
+  /* display: inline-block; */
+  background-color: gray;
 }
 
 .card{
-  float: left;
   border: 1px solid black;
   width: 15%;
-  height: 200px;
+  height: 120px;
   margin: 10px;
 }
 

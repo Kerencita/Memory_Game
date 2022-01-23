@@ -87,6 +87,7 @@ function checkMatch(a,b){
     a.style.opacity = 0.5
     b.style.opacity = 0.5
     updateMoveCounter()
+    removeListener(a.id)
     List = []
     setTimeout(function(){
       checkGameOver()
@@ -98,6 +99,15 @@ function checkMatch(a,b){
     setTimeout(function(){
       hideCards(a,b);
     }, 1000);
+  }
+}
+
+function removeListener (n){
+  let a = `#${n}`
+  console.log(a)
+  let cards = document.querySelectorAll(a);
+  for (let card of cards){
+    card.removeEventListener("click", handleCardClick)
   }
 }
 
