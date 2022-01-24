@@ -129,7 +129,7 @@ function checkGameOver (){
     if(card.style.backgroundColor !== 'gray'){
       counter +=1
     }
-    if (counter == 10){
+    if (counter === 10){
       savedScores.push(moveCounter)
       localStorage.setItem('savedscore', JSON.stringify(savedScores))
       alert("GAME OVER!")
@@ -141,6 +141,12 @@ function checkGameOver (){
 // when the DOM loads
 createDivsForColors(shuffledColors);
 
+let allDivs = document.querySelectorAll('div');
+for (let div of allDivs){
+  div.style.backgroundColor = 'gray'
+}
+
+//GETTING THE BEST SCORE FROM LOCAL STORAGE//
 if(localStorage.getItem('savedscore')){
   savedScores = JSON.parse(localStorage.getItem('savedscore'));
   let bestScore = Math.min(...savedScores);
