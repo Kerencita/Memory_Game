@@ -60,6 +60,9 @@ function createDivsForColors(colorArray) {
   }
 }
 
+//THIS LIST IS FOR LOCAL STORAGE
+let savedScores = [];
+
 let List = [];
 let temp = ''
 let moveCounter = 0
@@ -127,6 +130,8 @@ function checkGameOver (){
       counter +=1
     }
     if (counter == 10){
+      savedScores.push(moveCounter)
+      localStorage.setItem('savedscore', JSON.stringify(savedScores))
       alert("GAME OVER!")
       window.location.reload()
     }
@@ -136,6 +141,11 @@ function checkGameOver (){
 // when the DOM loads
 createDivsForColors(shuffledColors);
 
+if(localStorage.getItem('savedscore')){
+  savedScores = JSON.parse(localStorage.getItem('savedscore'));
+  let bestScore = Math.min(...savedScores);
+  document.querySelector('h4').textContent = `Best Score: ${bestScore}`
+}
 
 //TIMER FEATURE GOTTEN FROM STACKOVERFLOW//
 // var timerVar = setInterval(countTimer, 1000);
