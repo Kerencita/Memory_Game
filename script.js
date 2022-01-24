@@ -81,7 +81,6 @@ function handleCardClick(event) {
 }
 
 function checkMatch(a,b){
-  console.log(a,b)
   if(a.id == b.id){
     console.log('cards match!');
     a.style.opacity = 0.5
@@ -104,7 +103,6 @@ function checkMatch(a,b){
 
 function removeListener (n){
   let a = `#${n}`
-  console.log(a)
   let cards = document.querySelectorAll(a);
   for (let card of cards){
     card.removeEventListener("click", handleCardClick)
@@ -130,6 +128,7 @@ function checkGameOver (){
     }
     if (counter == 10){
       alert("GAME OVER!")
+      window.location.reload()
     }
   }
 }
